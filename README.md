@@ -1,4 +1,4 @@
-# CoreTextUsage （文本绘制）
+# CoreTextUsage (CoreText框架涉及‘文本绘制’和‘文本布局’) 
 
 CoreText框架文本绘制基本架构：CTFramesetter -> CTFrame(段落) -> CTLine(行文本) -> CTRun（字符集）   
 自定义文本显示框实现思路：   
