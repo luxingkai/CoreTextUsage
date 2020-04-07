@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CustomTextDraw.h"
+#import "CustomLabel.h"
 
 @interface ViewController ()
 
@@ -16,6 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+//    CustomTextDraw *textView = [[CustomTextDraw alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    [self.view addSubview:textView];
+    
+    CustomLabel *label = [[CustomLabel alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:label];
+    
+    
     // Do any additional setup after loading the view.
 }
 
