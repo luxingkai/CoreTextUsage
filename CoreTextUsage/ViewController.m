@@ -21,7 +21,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
 //    CustomTextDraw *textView = [[CustomTextDraw alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    [self.view addSubview:textView];
     
