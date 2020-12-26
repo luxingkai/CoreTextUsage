@@ -15,6 +15,16 @@
 		114CCD962595EF0D00B4CCF1 /* CTFramesetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 114CCD952595EF0D00B4CCF1 /* CTFramesetter.m */; };
 		114CCD992596062700B4CCF1 /* CTGlyphInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 114CCD982596062700B4CCF1 /* CTGlyphInfo.m */; };
 		114CCD9C2596091900B4CCF1 /* CTLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 114CCD9B2596091900B4CCF1 /* CTLine.m */; };
+		11585A612596C48000957818 /* CTParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A602596C48000957818 /* CTParagraphStyle.m */; };
+		11585A642596C6A000957818 /* CTRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A632596C6A000957818 /* CTRun.m */; };
+		11585A672596CE2700957818 /* CTRunDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A662596CE2700957818 /* CTRunDelegate.m */; };
+		11585A6A2596CE3A00957818 /* CTTextTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A692596CE3A00957818 /* CTTextTab.m */; };
+		11585A6D2596CE4900957818 /* CTTypesetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A6C2596CE4900957818 /* CTTypesetter.m */; };
+		11585A712596D59400957818 /* CoreTextOverview.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A702596D59400957818 /* CoreTextOverview.m */; };
+		11585A732596DCD300957818 /* core_text_arch_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11585A722596DCD300957818 /* core_text_arch_2x.png */; };
+		11585A752596DD8800957818 /* query_font_system_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11585A742596DD8800957818 /* query_font_system_2x.png */; };
+		11585A782596DE4100957818 /* CommonTextLayoutOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A772596DE4100957818 /* CommonTextLayoutOperations.m */; };
+		11585A7B2596DE5E00957818 /* CommonFontOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11585A7A2596DE5E00957818 /* CommonFontOperations.m */; };
 		115A7156243C145F00E6F8A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 115A7155243C145F00E6F8A2 /* AppDelegate.m */; };
 		115A715C243C145F00E6F8A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115A715B243C145F00E6F8A2 /* ViewController.m */; };
 		115A715F243C145F00E6F8A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115A715D243C145F00E6F8A2 /* Main.storyboard */; };
@@ -61,6 +71,24 @@
 		114CCD982596062700B4CCF1 /* CTGlyphInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTGlyphInfo.m; sourceTree = "<group>"; };
 		114CCD9A2596091900B4CCF1 /* CTLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTLine.h; sourceTree = "<group>"; };
 		114CCD9B2596091900B4CCF1 /* CTLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTLine.m; sourceTree = "<group>"; };
+		11585A5F2596C48000957818 /* CTParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTParagraphStyle.h; sourceTree = "<group>"; };
+		11585A602596C48000957818 /* CTParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTParagraphStyle.m; sourceTree = "<group>"; };
+		11585A622596C6A000957818 /* CTRun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTRun.h; sourceTree = "<group>"; };
+		11585A632596C6A000957818 /* CTRun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTRun.m; sourceTree = "<group>"; };
+		11585A652596CE2700957818 /* CTRunDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTRunDelegate.h; sourceTree = "<group>"; };
+		11585A662596CE2700957818 /* CTRunDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTRunDelegate.m; sourceTree = "<group>"; };
+		11585A682596CE3A00957818 /* CTTextTab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTTextTab.h; sourceTree = "<group>"; };
+		11585A692596CE3A00957818 /* CTTextTab.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTTextTab.m; sourceTree = "<group>"; };
+		11585A6B2596CE4900957818 /* CTTypesetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTTypesetter.h; sourceTree = "<group>"; };
+		11585A6C2596CE4900957818 /* CTTypesetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTTypesetter.m; sourceTree = "<group>"; };
+		11585A6F2596D59400957818 /* CoreTextOverview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextOverview.h; sourceTree = "<group>"; };
+		11585A702596D59400957818 /* CoreTextOverview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextOverview.m; sourceTree = "<group>"; };
+		11585A722596DCD300957818 /* core_text_arch_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = core_text_arch_2x.png; sourceTree = "<group>"; };
+		11585A742596DD8800957818 /* query_font_system_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = query_font_system_2x.png; sourceTree = "<group>"; };
+		11585A762596DE4100957818 /* CommonTextLayoutOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTextLayoutOperations.h; sourceTree = "<group>"; };
+		11585A772596DE4100957818 /* CommonTextLayoutOperations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonTextLayoutOperations.m; sourceTree = "<group>"; };
+		11585A792596DE5E00957818 /* CommonFontOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonFontOperations.h; sourceTree = "<group>"; };
+		11585A7A2596DE5E00957818 /* CommonFontOperations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonFontOperations.m; sourceTree = "<group>"; };
 		115A7151243C145F00E6F8A2 /* CoreTextUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTextUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115A7154243C145F00E6F8A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		115A7155243C145F00E6F8A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,8 +167,31 @@
 				114CCD982596062700B4CCF1 /* CTGlyphInfo.m */,
 				114CCD9A2596091900B4CCF1 /* CTLine.h */,
 				114CCD9B2596091900B4CCF1 /* CTLine.m */,
+				11585A5F2596C48000957818 /* CTParagraphStyle.h */,
+				11585A602596C48000957818 /* CTParagraphStyle.m */,
+				11585A622596C6A000957818 /* CTRun.h */,
+				11585A632596C6A000957818 /* CTRun.m */,
+				11585A652596CE2700957818 /* CTRunDelegate.h */,
+				11585A662596CE2700957818 /* CTRunDelegate.m */,
+				11585A682596CE3A00957818 /* CTTextTab.h */,
+				11585A692596CE3A00957818 /* CTTextTab.m */,
+				11585A6B2596CE4900957818 /* CTTypesetter.h */,
+				11585A6C2596CE4900957818 /* CTTypesetter.m */,
 			);
 			path = CoreText;
+			sourceTree = "<group>";
+		};
+		11585A6E2596D56900957818 /* ProgrammingGuide */ = {
+			isa = PBXGroup;
+			children = (
+				11585A6F2596D59400957818 /* CoreTextOverview.h */,
+				11585A702596D59400957818 /* CoreTextOverview.m */,
+				11585A762596DE4100957818 /* CommonTextLayoutOperations.h */,
+				11585A772596DE4100957818 /* CommonTextLayoutOperations.m */,
+				11585A792596DE5E00957818 /* CommonFontOperations.h */,
+				11585A7A2596DE5E00957818 /* CommonFontOperations.m */,
+			);
+			path = ProgrammingGuide;
 			sourceTree = "<group>";
 		};
 		115A7148243C145F00E6F8A2 = {
@@ -166,12 +217,15 @@
 		115A7153243C145F00E6F8A2 /* CoreTextUsage */ = {
 			isa = PBXGroup;
 			children = (
+				11585A6E2596D56900957818 /* ProgrammingGuide */,
 				114CCD842595C58300B4CCF1 /* CoreText */,
 				114CCD832595C56B00B4CCF1 /* Practice */,
 				115A7154243C145F00E6F8A2 /* AppDelegate.h */,
 				115A7155243C145F00E6F8A2 /* AppDelegate.m */,
 				115A715A243C145F00E6F8A2 /* ViewController.h */,
 				115A715B243C145F00E6F8A2 /* ViewController.m */,
+				11585A742596DD8800957818 /* query_font_system_2x.png */,
+				11585A722596DCD300957818 /* core_text_arch_2x.png */,
 				115A715D243C145F00E6F8A2 /* Main.storyboard */,
 				115A7160243C146100E6F8A2 /* Assets.xcassets */,
 				115A7162243C146100E6F8A2 /* LaunchScreen.storyboard */,
@@ -303,9 +357,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11585A752596DD8800957818 /* query_font_system_2x.png in Resources */,
 				115A7164243C146100E6F8A2 /* LaunchScreen.storyboard in Resources */,
 				115A7161243C146100E6F8A2 /* Assets.xcassets in Resources */,
 				115A715F243C145F00E6F8A2 /* Main.storyboard in Resources */,
+				11585A732596DCD300957818 /* core_text_arch_2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,13 +386,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11585A642596C6A000957818 /* CTRun.m in Sources */,
+				11585A672596CE2700957818 /* CTRunDelegate.m in Sources */,
+				11585A712596D59400957818 /* CoreTextOverview.m in Sources */,
+				11585A782596DE4100957818 /* CommonTextLayoutOperations.m in Sources */,
 				115A715C243C145F00E6F8A2 /* ViewController.m in Sources */,
+				11585A7B2596DE5E00957818 /* CommonFontOperations.m in Sources */,
+				11585A612596C48000957818 /* CTParagraphStyle.m in Sources */,
 				115A718C243C180200E6F8A2 /* CustomTextDraw.m in Sources */,
 				114CCD962595EF0D00B4CCF1 /* CTFramesetter.m in Sources */,
 				115A7156243C145F00E6F8A2 /* AppDelegate.m in Sources */,
+				11585A6D2596CE4900957818 /* CTTypesetter.m in Sources */,
 				114CCD9C2596091900B4CCF1 /* CTLine.m in Sources */,
 				115A7167243C146100E6F8A2 /* main.m in Sources */,
 				114CCD902595E1BD00B4CCF1 /* CTFontDescriptor.m in Sources */,
+				11585A6A2596CE3A00957818 /* CTTextTab.m in Sources */,
 				115A718F243C2A9100E6F8A2 /* CustomLabel.m in Sources */,
 				114CCD992596062700B4CCF1 /* CTGlyphInfo.m in Sources */,
 				114CCD8A2595C95700B4CCF1 /* CTFont.m in Sources */,
