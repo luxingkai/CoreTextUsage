@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "CommonTextLayoutOperations.h"
+#import "CoreTextOverview.h"
+#import "CommonFontOperations.h"
+
 
 @interface AppDelegate ()
 

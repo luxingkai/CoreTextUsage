@@ -579,7 +579,16 @@
      */
     
     
+    UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 100, 20)];
+    titleLab.text = @"推荐";
+    titleLab.textColor = UIColor.blackColor;
+    titleLab.highlightedTextColor = [UIColor redColor];
+    [self.view addSubview:titleLab];
+    
+        
+
 }
+
 
 /*
 #pragma mark - Navigation
