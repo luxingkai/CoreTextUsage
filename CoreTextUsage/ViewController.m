@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CustomTextDraw.h"
 #import "CustomLabel.h"
+#import "CommonFontOperations.h"
 
 @interface ViewController ()
 
@@ -26,6 +27,7 @@
     
     CustomLabel *label = [[CustomLabel alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:label];
+    
     
     
     // Do any additional setup after loading the view.

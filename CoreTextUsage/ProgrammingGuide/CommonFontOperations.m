@@ -7,6 +7,7 @@
 //
 
 #import "CommonFontOperations.h"
+#import <CoreText/CoreText.h>
 
 @interface CommonFontOperations ()
 
@@ -315,19 +316,190 @@
      
      */
     
+    self.view.backgroundColor = UIColor.whiteColor;
     
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    titleLabel.text = @"test label";
+    titleLabel.font = [UIFont systemFontOfSize:20 weight:UIFontWeightUltraLight];
+    [self.view addSubview:titleLabel];
+    
+    
+    // ===========================
+    NSString* familyName = @"Papyrus";
+    CTFontSymbolicTraits symbolicTraits = kCTFontTraitCondensed;
+    CGFloat size = 24.0;
+     
+    NSMutableDictionary* attributes = [NSMutableDictionary dictionary];
+    [attributes setObject:familyName forKey:(id)kCTFontFamilyNameAttribute];
+     
+    // The attributes dictionary contains another dictionary, the traits dictionary,
+    // which in this example specifies only the symbolic traits.
+    NSMutableDictionary* traits = [NSMutableDictionary dictionary];
+    [traits setObject:[NSNumber numberWithUnsignedInt:symbolicTraits]
+                                               forKey:(id)kCTFontSymbolicTrait];
+     
+    [attributes setObject:traits forKey:(id)kCTFontTraitsAttribute];
+    
+    [attributes setObject:[NSNumber numberWithFloat:size]
+                                             forKey:(id)kCTFontSizeAttribute];
+     
+    CTFontDescriptorRef descriptor =
+                 CTFontDescriptorCreateWithAttributes((CFDictionaryRef)attributes);
+    
+    // Create a font using the descriptor.
+    CTFontRef font = CTFontCreateWithFontDescriptor(descriptor, 0.0, NULL);
+    
+    CFRelease(descriptor);
+
     
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**
+ Creating Font Descriptors
+ */
+
+CTFontDescriptorRef CreateFontDescriptorFromName(CFStringRef postScriptName,
+                                                  CGFloat size)
+{
+    return CTFontDescriptorCreateWithNameAndSize(postScriptName, size);
 }
-*/
+
+/**
+ Creating Related Fonts
+ */
+CTFontRef CreateBoldFont(CTFontRef font, Boolean makeBold)
+{
+    CTFontSymbolicTraits desiredTrait = 0;
+    CTFontSymbolicTraits traitMask;
+ 
+    // If requesting that the font be bold, set the desired trait
+    // to be bold.
+    if (makeBold) desiredTrait = kCTFontBoldTrait;
+ 
+    // Mask off the bold trait to indicate that it is the only trait
+    // to be modified. As CTFontSymbolicTraits is a bit field,
+    // could change multiple traits if desired.
+    traitMask = kCTFontBoldTrait;
+ 
+    // Create a copy of the original font with the masked trait set to the
+    // desired value. If the font family does not have the appropriate style,
+    // returns NULL.
+ 
+    return CTFontCreateCopyWithSymbolicTraits(font, 0.0, NULL, desiredTrait, traitMask);
+}
+
+CTFontRef CreateFontConvertedToFamily(CTFontRef font, CFStringRef family)
+{
+    // Create a copy of the original font with the new family. This call
+    // attempts to preserve traits, and may return NULL if that is not possible.
+    // Pass in 0.0 and NULL for size and matrix to preserve the values from
+    // the original font.
+ 
+    return CTFontCreateCopyWithFamily(font, 0.0, NULL, family);
+}
+
+
+/**
+ Serializing a Font
+ */
+
+CFDataRef CreateFlattenedFontData(CTFontRef font)
+{
+    CFDataRef           result = NULL;
+    CTFontDescriptorRef descriptor;
+    CFDictionaryRef     attributes;
+ 
+    // Get the font descriptor for the font.
+    descriptor = CTFontCopyFontDescriptor(font);
+ 
+    if (descriptor != NULL) {
+        // Get the font attributes from the descriptor. This should be enough
+        // information to recreate the descriptor and the font later.
+        attributes = CTFontDescriptorCopyAttributes(descriptor);
+ 
+        if (attributes != NULL) {
+            // If attributes are a valid property list, directly flatten
+            // the property list. Otherwise we may need to analyze the attributes
+            // and remove or manually convert them to serializable forms.
+            // This is left as an exercise for the reader.
+           if (CFPropertyListIsValid(attributes, kCFPropertyListXMLFormat_v1_0)) {
+                result = CFPropertyListCreateXMLData(kCFAllocatorDefault, attributes);
+            }
+        }
+    }
+    return result;
+}
+
+
+/**
+ Creating a Font from Serialized Data
+ */
+
+CTFontRef CreateFontFromFlattenedFontData(CFDataRef iData)
+{
+    CTFontRef           font = NULL;
+    CFDictionaryRef     attributes;
+    CTFontDescriptorRef descriptor;
+ 
+    // Create our font attributes from the property list.
+    // For simplicity, this example creates an immutable object.
+    // If you needed to massage or convert certain attributes
+    // from their serializable form to the Core Text usable form,
+    // do it here.
+    attributes =
+          (CFDictionaryRef)CFPropertyListCreateFromXMLData(
+                               kCFAllocatorDefault,
+                               iData, kCFPropertyListImmutable, NULL);
+    if (attributes != NULL) {
+        // Create the font descriptor from the attributes.
+        descriptor = CTFontDescriptorCreateWithAttributes(attributes);
+        if (descriptor != NULL) {
+            // Create the font from the font descriptor. This sample uses
+            // 0.0 and NULL for the size and matrix parameters. This
+            // causes the font to be created with the size and/or matrix
+            // that exist in the descriptor, if present. Otherwise default
+            // values are used.
+            font = CTFontCreateWithFontDescriptor(descriptor, 0.0, NULL);
+        }
+    }
+    return font;
+}
+
+
+/**
+ Changing Kerning
+ */
+
+
+
+/**
+ Getting Glyphs for Characters
+ */
+
+void GetGlyphsForCharacters(CTFontRef font, CFStringRef string)
+{
+    // Get the string length.
+    CFIndex count = CFStringGetLength(string);
+ 
+    // Allocate our buffers for characters and glyphs.
+    UniChar *characters = (UniChar *)malloc(sizeof(UniChar) * count);
+    CGGlyph *glyphs = (CGGlyph *)malloc(sizeof(CGGlyph) * count);
+ 
+    // Get the characters from the string.
+    CFStringGetCharacters(string, CFRangeMake(0, count), characters);
+ 
+    // Get the glyphs for the characters.
+    CTFontGetGlyphsForCharacters(font, characters, glyphs, count);
+ 
+    // Do something with the glyphs here. Characters not mapped by this font will be zero.
+    // ...
+ 
+    // Free the buffers
+    free(characters);
+    free(glyphs);
+}
+
 
 @end
